@@ -223,7 +223,7 @@
             // 
             // customerOrderPreviewBindingSource
             // 
-            this.customerOrderPreviewBindingSource.DataSource = typeof(Resturant_Management_System.CustomerOrderPreview);
+            
             // 
             // Dashboard
             // 

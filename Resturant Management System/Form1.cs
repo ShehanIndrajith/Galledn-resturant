@@ -13,7 +13,7 @@ namespace Resturant_Management_System
 {
     public partial class Dashboard : Form
     {
-        private ordercard Ordercard;
+        
 
         String foodname;
         String qntity;

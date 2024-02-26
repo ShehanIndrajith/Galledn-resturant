@@ -223,7 +223,7 @@ namespace Resturant_Management_System
             }
             else if (flag == 2)
             {
-                string query = "SELECT name, regular_price, large_price FROM Drinks WHERE drink_id = @DrinkId";
+                string query = "SELECT name, available_size, regular_price, large_price FROM Drinks WHERE drink_id = @DrinkId";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -238,12 +238,36 @@ namespace Resturant_Management_System
                         if (reader.Read())
                         {
                             foodnametxt.Text = reader["name"].ToString();
+                            String sizes = reader["available_size"].ToString();
                             regulerpriselbl.Text = reader["regular_price"].ToString();
                             largepricelbl.Text = reader["large_price"].ToString();
 
                             foodname = reader["name"].ToString();
                             regularPrice = reader["regular_price"].ToString();
                             largePrice = reader["large_price"].ToString();
+
+                            if (sizes == "All")
+                            {
+                                foodsizetxt.Items.Clear();
+
+                                // Add items one by one
+                                foodsizetxt.Items.Add("Regular");
+                                foodsizetxt.Items.Add("Large");
+                            }
+                            else if (sizes == "Regular")
+                            {
+                                foodsizetxt.Items.Clear();
+
+                                // Add items one by one
+                                foodsizetxt.Items.Add("Regular");
+                            }
+                            else if (sizes == "Large")
+                            {
+                                foodsizetxt.Items.Clear();
+
+                                // Add items one by one
+                                foodsizetxt.Items.Add("Large");
+                            }
                         }
                         else
                         {
@@ -260,7 +284,7 @@ namespace Resturant_Management_System
             }
             else if (flag == 3)
             {
-                string query = "SELECT name, regular_price, large_price FROM Desserts WHERE dessert_id = @DessertId";
+                string query = "SELECT name, available_size, regular_price, large_price FROM Desserts WHERE dessert_id = @DessertId";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -275,12 +299,36 @@ namespace Resturant_Management_System
                         if (reader.Read())
                         {
                             foodnametxt.Text = reader["name"].ToString();
+                            String sizes = reader["available_size"].ToString();
                             regulerpriselbl.Text = reader["regular_price"].ToString();
                             largepricelbl.Text = reader["large_price"].ToString();
 
                             foodname = reader["name"].ToString();
                             regularPrice = reader["regular_price"].ToString();
                             largePrice = reader["large_price"].ToString();
+
+                            if (sizes == "All")
+                            {
+                                foodsizetxt.Items.Clear();
+
+                                // Add items one by one
+                                foodsizetxt.Items.Add("Regular");
+                                foodsizetxt.Items.Add("Large");
+                            }
+                            else if (sizes == "Regular")
+                            {
+                                foodsizetxt.Items.Clear();
+
+                                // Add items one by one
+                                foodsizetxt.Items.Add("Regular");
+                            }
+                            else if (sizes == "Large")
+                            {
+                                foodsizetxt.Items.Clear();
+
+                                // Add items one by one
+                                foodsizetxt.Items.Add("Large");
+                            }
                         }
                         else
                         {
