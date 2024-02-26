@@ -61,12 +61,11 @@ namespace Resturant_Management_System
                 {
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
-                        string query = @"INSERT INTO FOOD_ORDER (customer_id, food_id, quantity, total_price,foodname) 
-                  VALUES (@CustomerId, @FoodId, @Quantity, @TotalPrice,@FoodName)";
+                        string query = @"INSERT INTO FOOD_ORDER (food_id, quantity, total_price,foodname) 
+                  VALUES (@FoodId, @Quantity, @TotalPrice,@FoodName)";
 
                         SqlCommand command = new SqlCommand(query, connection);
-                        // Assuming you have customer_id available in your form, replace 1 with actual customer_id
-                        command.Parameters.AddWithValue("@CustomerId", 1);
+                        
                         command.Parameters.AddWithValue("@FoodId", foodId);
                         command.Parameters.AddWithValue("@Quantity", qntity);
                         command.Parameters.AddWithValue("@TotalPrice", Total);
@@ -90,13 +89,11 @@ namespace Resturant_Management_System
                 {
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
-                        string query = @"INSERT INTO Drink_ORDER (drink_id, customer_id, quantity, total_price,drinkname) 
-                         VALUES (@DrinkId, @CustomerId, @Quantity, @TotalPrice, @Drinkname)";
+                        string query = @"INSERT INTO Drink_ORDER (drink_id, quantity, total_price,drinkname) 
+                         VALUES (@DrinkId, @Quantity, @TotalPrice, @Drinkname)";
 
                         SqlCommand command = new SqlCommand(query, connection);
                         command.Parameters.AddWithValue("@DrinkId", foodId);
-                        // Assuming you have customer_id available in your form, replace 1 with actual customer_id
-                        command.Parameters.AddWithValue("@CustomerId", 1);
                         command.Parameters.AddWithValue("@Quantity", qntity);
                         command.Parameters.AddWithValue("@TotalPrice", Total);
                         command.Parameters.AddWithValue("@Drinkname", foodname);
@@ -119,13 +116,11 @@ namespace Resturant_Management_System
                 {
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
-                        string query = @"INSERT INTO Dessert_ORDER (dessert_id, customer_id, quantity, total_price,dessertname) 
-                         VALUES (@DessertId, @CustomerId, @Quantity, @TotalPrice, @Dessertname)";
+                        string query = @"INSERT INTO Dessert_ORDER (dessert_id, quantity, total_price,dessertname) 
+                         VALUES (@DessertId, @Quantity, @TotalPrice, @Dessertname)";
 
                         SqlCommand command = new SqlCommand(query, connection);
                         command.Parameters.AddWithValue("@DessertId", foodId);
-                        // Assuming you have customer_id available in your form, replace 1 with actual customer_id
-                        command.Parameters.AddWithValue("@CustomerId", 1);
                         command.Parameters.AddWithValue("@Quantity", qntity);
                         command.Parameters.AddWithValue("@TotalPrice", Total);
                         command.Parameters.AddWithValue("@Dessertname", foodname);
